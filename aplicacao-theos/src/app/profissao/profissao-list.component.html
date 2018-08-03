@@ -1,0 +1,30 @@
+<mat-card>
+  <div>
+    <a mat-raised-button class="add-button" mat-fab routerLink="/profissao-create"><mat-icon>add</mat-icon></a>
+  </div>
+  <div class="crud-container">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="profissaolist" class="mat-elevation-z8">
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell width="90%" *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+       <th mat-header-cell *matHeaderCellDef> Ações </th>
+       <td mat-cell width="10%" *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="edit(element.id)">
+             <mat-icon>editar</mat-icon>
+           </button>
+           <button mat-icon-button color="warn" (click)="delete(element.id)">
+               <mat-icon >delete</mat-icon>
+           </button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator class="mat-elevation-z8" [pageSizeOptions]="[5, 10, 15]" itemsPerPageLabel='teste' ></mat-paginator>
+</mat-card>

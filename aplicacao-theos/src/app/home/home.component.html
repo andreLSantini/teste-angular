@@ -1,0 +1,12 @@
+<div>
+  <mat-sidenav-container class="menu-sidenav-container" >
+    <mat-sidenav class="menu-sidenav-container-size"  mode="side" opened>
+      <img class="menu-sidenav-logo" mat-card-image src="./assets/img/logo.jpg" routerLink="/" height="150px" width="150px" alt="Photo of a Shiba Inu">
+      <mat-divider></mat-divider>
+      <button mat-flat-button  class="menu-button" routerLink="/profissao-list">Profissao</button>
+    </mat-sidenav>
+    <mat-sidenav-content class="menu-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

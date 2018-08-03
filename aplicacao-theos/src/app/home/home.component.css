@@ -1,0 +1,27 @@
+.menu-sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+.menu-sidenav-container-size {
+  min-width: 200px;
+}
+.menu-sidenav-logo {
+  margin-top: 20px !important;
+  margin-left: 20px;
+  min-width: 140px;
+  max-width: 160px;
+  min-height: 140px;
+  max-height: 180px;
+}
+
+.menu-content {
+    margin-top: 80px !important;
+}
+.menu-button {
+  background-color: #11a0da;
+  width: 100%;
+}

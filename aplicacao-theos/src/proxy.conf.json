@@ -1,0 +1,8 @@
+{
+  "/profissao": {
+    "target": "http(s)://5b6456b8923c0500144a27f1.mockapi.io",
+    "secure": false,
+    "logLevel": "debug"
+  },
+   "changeOrigin": true
+}

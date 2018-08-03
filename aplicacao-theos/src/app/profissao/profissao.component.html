@@ -1,0 +1,70 @@
+<form [formGroup]="formCadastro" (submit)="save()">
+  <mat-card>
+    <mat-form-field class="input-small-width">
+      <input matInput placeholder="Nome" formControlName="nome">
+      <mat-error *ngIf="formCadastro.controls['nome'].hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-small-width">
+      <input matInput placeholder="Sobre Nome" formControlName="sobrenome">
+      <mat-error *ngIf="formCadastro.controls['sobrenome'].hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-small-width">
+      <mat-select placeholder="Sexo">
+        <mat-option *ngFor="let sexo of sexos" [value]="sexo.value">
+          {{sexo.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input-small-width">
+      <input matInput placeholder="Email"  type="email" formControlName="email">
+      <mat-error *ngIf="formCadastro.controls['email'].hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="input-small-width">
+      <mat-select placeholder="Estado" (selectionChange)="doSomething($event)"formControlName="estado">
+        <mat-option *ngFor="let estado of estados" [value]="estado" >
+          {{estado.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input-small-width">
+      <mat-select placeholder="Cidade" formControlName="cidade">
+        <mat-option *ngFor="let cidade of cidades" [value]="cidade" >
+          {{cidade}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input-small-width">
+      <mat-select placeholder="Profissao" formControlName="profissao">
+        <mat-option *ngFor="let profissao of profissoes" [value]="profissao" >
+          {{profissao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input-medium-width">
+      <input matInput placeholder="Area Formacao" formControlName="areaformacao">
+      <mat-error *ngIf="formCadastro.controls['areaformacao'].hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field  *ngIf="true" class="input-medium-width">
+      <input matInput placeholder="Area Formacao" formControlName="data">
+      <mat-error *ngIf="formCadastro.controls['data'].hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+    <div class="space-between">
+      <button type="button" color="warn" mat-raised-button routerLink="/profissao-list">
+        Cancelar
+      </button>
+      <button type="submit"  mat-raised-button class="button-save">
+        Salvar
+      </button>
+    </div>
+  </mat-card>
+</form>
